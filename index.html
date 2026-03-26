@@ -47,9 +47,16 @@
     </div>
 
     <div class="block">
-      <h2>Piste & couloir bruit</h2>
-      <div id="runway-info" class="small">Analyse en cours...</div>
-    </div>
+  <h2>Piste & couloir bruit</h2>
+  <div id="runway-info" class="small">Analyse en cours...</div>
+
+  <label class="small">Phase :</label>
+  <select id="phase-select">
+    <option value="auto">Automatique</option>
+    <option value="Décollage">Décollage</option>
+    <option value="Atterrissage">Atterrissage</option>
+  </select>
+</div>
 
     <div class="block">
       <h2>Sonomètres impactés</h2>
@@ -67,7 +74,7 @@
 </main>
 
 <!-- Ton app.js doit être chargé EN DERNIER -->
-<script src="https://cdn.jsdelivr.net/gh/peakbe/eblg-dashboard-v8/app.js?v=11"></script>
+<script src="https://cdn.jsdelivr.net/gh/peakbe/eblg-dashboard-v9/app.js?v=11"></script>
 
 </body>
 </html>
