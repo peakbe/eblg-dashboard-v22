@@ -220,16 +220,21 @@ async function refresh() {
   const fids = await fetchFIDS();
   updateFlightsUI(fids);
 
-  /* RUNWAY */
+ /* RUNWAY */
 const rw = extractRunway(fids);
 if (!rw) {
   document.getElementById("runway-info").textContent = "Piste non déterminée.";
   return;
 }
 
-/* Déterminer la phase */
+console.log("RUNWAY =", rw.name);
+
+/* PHASE */
 let phase = "Décollage";
-if (fids.arrivals.length > 0) phase = "Atterrissage";
+if (fids.arrivals.length > fids.departures.length) {
+  phase = "Atterrissage";
+}
+
 console.log("PHASE =", phase);
 
 document.getElementById("runway-info").textContent =
